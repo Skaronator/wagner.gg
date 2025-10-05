@@ -1,4 +1,4 @@
-baseURL: "/"
+baseURL: https://wagner.gg
 title: "Niklas Wagner"
 
 build:
@@ -17,6 +17,10 @@ module:
   - disableWatch: true
     source: hugo_stats.json
     target: assets/notwatching/hugo_stats.json
+
+caches:
+  images:
+    dir: :cacheDir/images
 
 params:
   name: Niklas Wagner
