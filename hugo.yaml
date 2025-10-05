@@ -1,0 +1,91 @@
+baseURL: "/"
+title: "Niklas Wagner"
+
+build:
+  buildStats:
+    enable: true
+  cachebusters:
+  - source: assets/notwatching/hugo_stats\.json
+    target: css
+  - source: (postcss|tailwind)\.config\.js
+    target: css
+
+module:
+  mounts:
+  - source: assets
+    target: assets
+  - disableWatch: true
+    source: hugo_stats.json
+    target: assets/notwatching/hugo_stats.json
+
+params:
+  name: "Niklas Wagner"
+  description: "Senior DevOps Engineer in Leipzig — Kubernetes, AWS, Terraform, Ansible, CI/CD, and Observability."
+  avatar: "/images/avatar.svg"
+  hero_intro: "Hi, I’m Niklas"
+  hero_body: |-
+    Senior DevOps Engineer based in Leipzig, Germany.
+    
+    I build and operate cloud infrastructure with Kubernetes and AWS, automate build and release pipelines with GitLab CI and GitHub Actions, and define infrastructure with Terraform and Ansible.
+
+    Prioritizing security, observability, and scalable workflows.
+  social:
+    github: "https://github.com/skaronator"
+    linkedin: "https://www.linkedin.com/in/wagnergg/"
+    email: "mailto:hello@wagner.gg"
+  skills_groups:
+    - title: "Containers"
+      items:
+        - name: "Kubernetes"
+          icon: "devicon-kubernetes-plain"
+        - name: "Docker"
+          icon: "devicon-docker-plain"
+        - name: "Podman"
+          icon: "devicon-podman-plain"
+
+    - title: "Infrastructure as Code"
+      items:
+        - name: "Terraform"
+          icon: "devicon-terraform-plain"
+        - name: "Ansible"
+          icon: "devicon-ansible-plain"
+        - name: "Helm"
+          icon: "devicon-helm-plain"
+
+    - title: "CI/CD Pipelines"
+      items:
+        - name: "GitLab CI"
+          icon: "devicon-gitlab-plain"
+        - name: "ArgoCD"
+          icon: "devicon-argocd-plain"
+        - name: "GitHub Actions"
+          icon: "devicon-githubactions-plain"
+
+    - title: "Collaboration Tools"
+      items:
+        - name: "Git"
+          icon: "devicon-git-plain"
+        - name: "Jira"
+          icon: "devicon-jira-plain"
+        - name: "Confluence"
+          icon: "devicon-confluence-plain"
+        - name: "GitLab"
+          icon: "devicon-gitlab-plain"
+        - name: "GitHub"
+          icon: "devicon-github-original"
+        - name: "Bitbucket"
+          icon: "devicon-bitbucket-original"
+
+    - title: "Other"
+      items:
+        - name: "AWS"
+          icon: "devicon-amazonwebservices-plain"
+        - name: "Bash"
+          icon: "devicon-bash-plain"
+        - name: "Golang"
+          icon: "devicon-go-plain"
+        - name: "Python"
+          icon: "devicon-python-plain"
+        - name: "TypeScript"
+          icon: "devicon-typescript-plain"
+
