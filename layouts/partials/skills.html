@@ -9,9 +9,13 @@
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-5">
         {{ range .items }}
         <a{{ with .url }} href="{{ . }}" target="_blank" rel="noopener"{{ end }} class="flex flex-col items-center justify-center card rounded-lg p-3 hover:scale-[1.02] transition">
-          {{ if .icon }}
-            <i class="{{ .icon }} text-3xl"></i>
-          {{ end }}
+          {{ $url := printf "/icons/%s.svg" .icon }}
+          <span
+            class="icon icon--mask text-3xl"
+            role="img"
+            aria-label="{{ .name }} icon"
+            style="-webkit-mask-image: url('{{ $url }}'); mask-image: url('{{ $url }}');"
+          ></span>
           {{ with .name }}<span class="text-xs mt-2 muted text-center">{{ . }}</span>{{ end }}
         </a>
         {{ end }}
