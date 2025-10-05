@@ -1,0 +1,17 @@
+{{/* Renders Certifications from params */}}
+{{ $certs := .Site.Params.certifications }}
+{{ if $certs }}
+<section class="container mx-auto px-5 py-12">
+  <h2 class="text-2xl font-bold mb-6">Certifications</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {{ range $certs }}
+    <article class="card rounded-xl p-5">
+      <h3 class="text-lg font-semibold">{{ .title }}</h3>
+      {{ with .date }}<p class="muted text-sm mt-1">{{ . }}</p>{{ end }}
+    </article>
+    {{ end }}
+  </div>
+  
+</section>
+{{ end }}
+
