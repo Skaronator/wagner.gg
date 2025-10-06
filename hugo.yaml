@@ -54,7 +54,7 @@ params:
     - title: Certified Kubernetes Administrator
       date: Juni 2023
 
-  skills_groups:
+  skills:
     - title: "Containers"
       items:
         - name: Kubernetes

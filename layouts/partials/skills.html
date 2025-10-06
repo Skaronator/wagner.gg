@@ -1,12 +1,11 @@
-{{/* Renders skills either from grouped params or flat list */}}
-{{ if .Site.Params.skills_groups }}
+{{ if .Site.Params.skills }}
 <section class="container mx-auto px-5 py-12">
-  <h2 class="text-2xl font-bold mb-6">Skills</h2>
+  <h2 class="text-2xl font-bold mb-4">Skills</h2>
   <p class="muted text-sm mb-6">These are the tools I use day-to-day and have for years.</p>
-  <div class="space-y-10">
-    {{ range .Site.Params.skills_groups }}
+  <div class="space-y-6">
+    {{ range .Site.Params.skills }}
     <div>
-      {{ with .title }}<h3 class="text-[11px] uppercase tracking-wider muted mb-3">{{ . }}</h3>{{ end }}
+      {{ with .title }}<h3 class="text-sm font-semibold uppercase tracking-wide text-white mb-3">{{ . }}</h3>{{ end }}
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-5">
         {{ range .items }}
         <a{{ with .url }} href="{{ . }}" target="_blank" rel="noopener"{{ end }} class="flex flex-col items-center justify-center card rounded-lg p-3 hover:scale-[1.02] transition">
