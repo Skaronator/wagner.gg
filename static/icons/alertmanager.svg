@@ -1,0 +1,124 @@
+<svg
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:cc="http://creativecommons.org/ns#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:svg="http://www.w3.org/2000/svg"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+	xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="svg2" xml:space="preserve" width="270" height="270" viewBox="0 0 270 270">
+	<metadata id="metadata8"/>
+	<defs id="defs6">
+		<clipPath id="clipPath18">
+			<path d="M 0,0 H 595.275 V 841.89 H 0 Z" id="path16" inkscape:connector-curvature="0"/>
+		</clipPath>
+		<clipPath id="clipPath34">
+			<path d="m 210.384,420.944 c 0,-48.188 39.065,-87.254 87.254,-87.254 v 0 c 48.189,0 87.253,39.066 87.253,87.254 v 0 c 0,48.19 -39.064,87.255 -87.253,87.255 v 0 c -48.189,0 -87.254,-39.065 -87.254,-87.255" id="path32" inkscape:connector-curvature="0"/>
+		</clipPath>
+		<clipPath id="clipPath42">
+			<path d="M 241.059,487.498 H 354.217 V 354.555 H 241.059 Z" id="path40" inkscape:connector-curvature="0"/>
+		</clipPath>
+		<clipPath id="clipPath46">
+			<path d="M 241.059,487.498 H 354.217 V 354.555 H 241.059 Z" id="path44" inkscape:connector-curvature="0"/>
+		</clipPath>
+		<clipPath id="clipPath50">
+			<path d="M 0,-0.001 H 113.159 V 132.943 H 0 Z" id="path48" inkscape:connector-curvature="0"/>
+		</clipPath>
+		<pattern patternTransform="matrix(1,0,0,-1,241.059,354.555)" patternUnits="userSpaceOnUse" x="0" y="0" width="113.159" height="132.943" id="pattern62">
+			<g id="g60">
+				<g clip-path="url(#clipPath50)" id="g58">
+					<g id="g56">
+						<g transform="matrix(113.15877,0,0,-132.94403,0,132.94305)" id="g54">
+
+						</g>
+					</g>
+				</g>
+			</g>
+		</pattern>
+		<mask maskUnits="userSpaceOnUse" x="0" y="0" width="1" height="1" id="mask64">
+			<g id="g80">
+				<g clip-path="url(#clipPath42)" id="g78" style="opacity:0.49000501">
+					<path d="M 241.059,487.498 H 354.217 V 354.555 H 241.059 Z" style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path66" inkscape:connector-curvature="0"/>
+					<g id="g76">
+						<g id="g68"/>
+						<g id="g74">
+							<g clip-path="url(#clipPath46)" id="g72">
+								<path d="M 241.059,354.555 H 354.217 V 487.498 H 241.059 Z" style="fill:url(#pattern62);fill-opacity:1;fill-rule:evenodd;stroke:none" id="path70" inkscape:connector-curvature="0"/>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</mask>
+			<clipPath id="clipPath88">
+				<path d="M 241.059,487.498 H 354.217 V 354.555 H 241.059 Z" id="path86" inkscape:connector-curvature="0"/>
+			</clipPath>
+
+        <!-- Build mask for silhouette: white = keep, black = holes -->
+        <mask id="am-mask2" maskUnits="userSpaceOnUse">
+            <!-- Start fully transparent -->
+            <rect x="0" y="0" width="270" height="270" fill="#000"/>
+            <!-- Add the main disc (white area) by reusing the OUTER circle path (#path22) with its transforms -->
+            <g transform="matrix(1.3333333,0,0,-1.3333333,0,269.99998)">
+                <g transform="translate(-196.3877,-319.69531)">
+                    <g transform="translate(297.6377,518.2808)">
+                        <use xlink:href="#path22" fill="#fff"/>
+                    </g>
+                </g>
+            </g>
+			<!-- Subtract the previously white details as holes (paint black over them) -->
+			<g transform="matrix(1.3333333,0,0,-1.3333333,0,269.99998)">
+				<g transform="translate(-196.388,-319.77651)">
+					<g transform="translate(297.6387,482.3545)">
+						<use xlink:href="#path98" fill="#000"/>
+					</g>
+					<g transform="translate(297.6333,470.4927)">
+						<use xlink:href="#path102" fill="#000"/>
+					</g>
+					<g transform="translate(309.7295,371.7871)">
+						<use xlink:href="#path106" fill="#000"/>
+					</g>
+				</g>
+			</g>
+		</mask>
+	</defs>
+	<!-- The original colored groups are kept for geometry references but hidden -->
+	<g id="g10" inkscape:groupmode="layer" inkscape:label="povilasve-icon-1" transform="matrix(1.3333333,0,0,-1.3333333,0,269.99998)" style="display:none">
+		<g id="g12" transform="translate(-196.3877,-319.69531)">
+				<g id="g14" clip-path="url(#clipPath18)">
+				<g id="g20" transform="translate(297.6377,518.2808)">
+					<path d="m 0,0 c 53.757,0 97.336,-43.579 97.336,-97.336 0,-53.757 -43.579,-97.335 -97.336,-97.335 -53.757,0 -97.336,43.578 -97.336,97.335 C -97.336,-43.579 -53.757,0 0,0" style="fill:#c0392b;fill-opacity:1;fill-rule:evenodd;stroke:none" id="path22" inkscape:connector-curvature="0"/>
+				</g>
+				<g id="g24" transform="translate(297.6377,508.1992)">
+					<path d="m 0,0 c 48.189,0 87.254,-39.065 87.254,-87.254 0,-48.189 -39.065,-87.255 -87.254,-87.255 -48.189,0 -87.254,39.066 -87.254,87.255 C -87.254,-39.065 -48.189,0 0,0" style="fill:#e74c3c;fill-opacity:1;fill-rule:evenodd;stroke:none" id="path26" inkscape:connector-curvature="0"/>
+				</g>
+			</g>
+		</g>
+		<g id="g28" transform="translate(-196.388,-319.77651)">
+			<g id="g30" clip-path="url(#clipPath34)">
+				<g id="g36">
+					<g id="g38"/>
+					<g id="g82" mask="url(#mask64)">
+						<g id="g84"/>
+						<g id="g94">
+							<g clip-path="url(#clipPath88)" id="g92" style="opacity:0.49000501">
+								<path d="M 241.059,487.498 H 354.217 V 354.555 H 241.059 Z" style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none" id="path90" inkscape:connector-curvature="0"/>
+							</g>
+						</g>
+					</g>
+				</g>
+					<g id="g96" transform="translate(297.6387,482.3545)">
+						<path d="m 0,0 h 0.001 c 3.45,0 6.273,-2.823 6.273,-6.273 v -28.234 c 0,-3.45 -2.823,-6.272 -6.273,-6.272 H 0 c -3.45,0 -6.272,2.822 -6.272,6.272 V -6.273 C -6.272,-2.823 -3.45,0 0,0" style="fill:#ecf0f1;fill-opacity:1;fill-rule:evenodd;stroke:none" id="path98" inkscape:connector-curvature="0"/>
+					</g>
+					<g id="g100" transform="translate(297.6333,470.4927)">
+						<path d="m 0,0 h 0.006 c 18.38,0 33.419,-15.039 33.419,-33.421 0,-7.232 -1.4,-33.876 4.847,-44.423 h -76.536 c 6.247,10.547 4.847,37.191 4.847,44.423 C -33.417,-15.038 -18.378,0 0,0 m 43.353,-82.038 c 0.435,-0.094 0.886,-0.148 1.359,-0.148 h 0.566 c 3.389,0 6.162,-2.772 6.162,-6.163 0,-3.391 -2.773,-6.163 -6.162,-6.163 h -90.547 c -3.39,0 -6.162,2.772 -6.162,6.163 0,3.391 2.772,6.163 6.162,6.163 h 0.565 c 0.473,0 0.924,0.054 1.359,0.148 z" style="fill:#ecf0f1;fill-opacity:1;fill-rule:evenodd;stroke:none" id="path102" inkscape:connector-curvature="0"/>
+					</g>
+					<g id="g104" transform="translate(309.7295,371.7871)">
+						<path d="m 0,0 c 0,-6.65 -5.438,-12.089 -12.089,-12.089 h -0.003 c -6.651,0 -12.09,5.439 -12.09,12.089 z" style="fill:#ecf0f1;fill-opacity:1;fill-rule:evenodd;stroke:none" id="path106" inkscape:connector-curvature="0"/>
+					</g>
+			</g>
+		</g>
+	</g>
+	<!-- Render: masked black rectangle to yield silhouette with transparent bell holes -->
+	<rect x="0" y="0" width="270" height="270" fill="#000" mask="url(#am-mask2)"/>
+</svg>

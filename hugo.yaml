@@ -93,6 +93,19 @@ params:
         - name: GitHub Actions
           icon: githubactions
 
+    - title: Observability
+      items:
+        - name: Grafana
+          icon: grafana
+        - name: Grafana Loki
+          icon: loki
+        - name: Grafana Mimir
+          icon: mimir
+        - name: Prometheus
+          icon: prometheus
+        - name: Alertmanager
+          icon: alertmanager
+
     - title: Collaboration Tools
       items:
         - name: Git
