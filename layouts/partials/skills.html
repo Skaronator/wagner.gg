@@ -1,31 +1,31 @@
 {{ if .Site.Params.skills }}
-<section class="container mx-auto px-5 py-12">
-  <h2 class="text-2xl font-bold mb-4">Skills</h2>
-  <p class="muted text-sm mb-6">These are the tools I use day-to-day and have for years.</p>
-  <div class="space-y-6">
-    {{ range .Site.Params.skills }}
-    <div>
-      {{ with .title }}<h3 class="text-sm font-semibold uppercase tracking-wide text-white mb-3">{{ . }}</h3>{{ end }}
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-5">
-        {{ range .items }}
-        <a{{ with .url }} href="{{ . }}" target="_blank" rel="noopener"{{ end }} class="flex flex-col items-center justify-center card rounded-lg p-3 hover:scale-[1.02] transition">
-          {{ $path := printf "static/icons/%s.svg" .icon }}
-          {{ $raw := readFile $path }}
-          {{ $data := base64Encode $raw }}
-          {{ $dataURI := printf "data:image/svg+xml;base64,%s" $data }}
-          {{ $style := printf "-webkit-mask-image:url('%s');mask-image:url('%s')" ($dataURI | safeURL) ($dataURI | safeURL) | safeCSS }}
-          <span
-            class="icon icon--mask text-3xl"
-            role="img"
-            aria-label="{{ .name }} icon"
-            style="{{ $style }}"
-          ></span>
-          {{ with .name }}<span class="text-xs mt-2 muted text-center">{{ . }}</span>{{ end }}
-        </a>
-        {{ end }}
-      </div>
+<section id="skills" class="section">
+  <div class="container mx-auto px-5">
+    <div class="section-heading section-heading--skills">
+      <p class="eyebrow">Capabilities</p>
+      <h2>Systems I build, ship, and maintain</h2>
+      <p class="muted">Stacks and tooling that show up in my daily workflow, from regulated environments to scrappy platform teams.</p>
     </div>
-    {{ end }}
+    <div class="skills-grid">
+      {{ range .Site.Params.skills }}
+      <article class="skills-group">
+        {{ with .title }}<h3>{{ . }}</h3>{{ end }}
+        <div class="skills-icons">
+          {{ range .items }}
+          <a{{ with .url }} href="{{ . }}" target="_blank" rel="noopener"{{ end }} class="skill-chip">
+            {{ $path := printf "static/icons/%s.svg" .icon }}
+            {{ $raw := readFile $path }}
+            {{ $data := base64Encode $raw }}
+            {{ $dataURI := printf "data:image/svg+xml;base64,%s" $data }}
+            {{ $style := printf "-webkit-mask-image:url('%s');mask-image:url('%s')" ($dataURI | safeURL) ($dataURI | safeURL) | safeCSS }}
+            <span class="icon icon--mask" role="img" aria-label="{{ .name }} icon" style="{{ $style }}"></span>
+            {{ with .name }}<span>{{ . }}</span>{{ end }}
+          </a>
+          {{ end }}
+        </div>
+      </article>
+      {{ end }}
+    </div>
   </div>
 </section>
 {{ end }}

@@ -25,23 +25,60 @@ caches:
 params:
   name: Niklas Wagner
   description: Senior DevOps Engineer in Leipzig — Kubernetes, AWS, Terraform, Ansible, CI/CD, and Observability.
+  location: Leipzig, Germany
   avatar: /images/avatar.svg
   hero_intro: Hi, I’m Niklas
+  hero_subtitle: Senior DevOps Engineer based in Leipzig, Germany.
   hero_body: |-
-    Senior DevOps Engineer based in Leipzig, Germany.
-    
     I build and operate cloud infrastructure with Kubernetes and AWS, automate build and release pipelines with GitLab CI and GitHub Actions, and define infrastructure with Terraform and Ansible.
 
     Prioritizing security, observability, and scalable workflows.
+  hero_highlights:
+    - Leading cloud platform modernization initiatives with Kubernetes and GitOps.
+    - Enabling developer self-service with secure CI/CD guardrails.
+    - Translating compliance requirements into automated workflows.
   social:
     github: https://github.com/skaronator
     linkedin: https://www.linkedin.com/in/wagnergg/
     email: mailto:hello@wagner.gg
+  focus_areas:
+    - Kubernetes platform engineering
+    - Infrastructure as Code (Terraform, Helm, Kustomize)
+    - Observability stacks for regulated environments
+    - Incident response and on-call leadership
+  contact_blurb: |-
+    I'm fully focused on my role at F&P GmbH and not available for external engagements. Always happy to connect and trade notes on Kubernetes, platform engineering, or observability.
+  experience:
+    - company: F&P GmbH
+      role: Senior DevOps Engineer
+      period: Nov 2025 — Present
+      location: Leipzig · Hybrid
+      current: true
+      summary: |-
+        Building and operating the Kubernetes and AWS infrastructure, GitLab platform, and CI/CD pipelines for a multi-tenant microservice platform as part of a small DevOps team, enabling product teams to ship services safely and autonomously.
+      highlights:
+        - Co-leading the Kubernetes-based microservice platform with my colleague on the DevOps team so product teams can deploy new microservices quickly and safely.
+        - Co-owning AWS and cluster infrastructure with my colleague, including networking, scaling, and lifecycle management for the platform.
+        - Maintaining and refactoring shared GitLab and GitLab CI templates to simplify pipelines and standardize best practices.
+        - Defining platform and CI/CD guardrails as part of the DevOps team so developers have a clear, safe path to production.
+        - Designing and rolling out a new observability stack for the platform with my colleague, using Grafana, Grafana Loki, and Grafana Mimir.
+    - company: Finatix GmbH
+      role: DevOps Engineer
+      period: Aug 2018 — Oct 2024
+      location: Leipzig · Hybrid
+      summary: |-
+        Led end-to-end infrastructure projects for banking, fintech, and mobility clients spanning AWS, Google Cloud, and on-premises Kubernetes, partnering closely with development teams to ship secure, reliable releases.
+      highlights:
+        - Architected a secure banking environment for 15 microservices on OpenShift, leveraging Istio Service Mesh, HashiCorp Vault, and custom metric-based autoscaling.
+        - Implemented a high-volume observability stack (Loki, Mimir, Grafana) monitoring 750+ pods for a financial trading platform.
+        - Executed a zero-downtime migration of enterprise credit card workloads from AWS ECS to EKS, enabling multi-account IAM and elastic GitLab CI runners.
+        - Automated evidence collection for ISO 27001 and TISAX audits by establishing central logging and policy-as-code foundations.
+        - Modernized release workflows for mobility clients, migrating from legacy CI tools to Buildkite and GitLab CI with declarative Infrastructure as Code.
   projects:
     - title: Homelab
       links:
         github: https://github.com/Skaronator/homelab
-      description: Homelab setup built on Kubernetes, deployed with ArgoCD and automated using Renovate
+      description: A homelab setup built on Kubernetes, deployed with Argo CD and automated using Renovate.
       tags:
         - Kubernetes
         - ArgoCD
@@ -52,10 +89,10 @@ params:
     - title: Certified Kubernetes Security Specialist
       date: April 2024
     - title: Certified Kubernetes Administrator
-      date: Juni 2023
+      date: June 2023
 
   skills:
-    - title: "Containers"
+    - title: Containers & Orchestration
       items:
         - name: Kubernetes
           icon: kubernetes
@@ -72,6 +109,8 @@ params:
           icon: hetzner
         - name: Google Cloud
           icon: googlecloud
+        - name: Scaleway
+          icon: scaleway
 
     - title: Infrastructure as Code
       items:

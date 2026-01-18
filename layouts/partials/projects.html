@@ -2,50 +2,64 @@
 {{ $projectsContent := where .Site.RegularPages "Section" "projects" }}
 {{ $projectsParams := .Site.Params.projects }}
 {{ if or $projectsParams (gt (len $projectsContent) 0) }}
-<section class="container mx-auto px-5 py-12">
-  <h2 class="text-2xl font-bold mb-6">Projects</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    {{ if $projectsParams }}
-      {{ range sort $projectsParams "weight" }}
-        <article class="card rounded-xl p-5">
-          <div class="flex items-start justify-between gap-4">
-            <div>
-              <h3 class="text-lg font-semibold">{{ .title }}</h3>
-              {{ with .subtitle }}<p class="muted text-sm mt-1">{{ . }}</p>{{ end }}
+<section id="projects" class="section">
+  <div class="container mx-auto px-5">
+    <div class="section-heading">
+      <p class="eyebrow">Impact</p>
+      <h2>Selected platform projects</h2>
+      <p class="muted">Deep dives spanning homelab experiments to hardened production deployments.</p>
+    </div>
+    <div class="project-grid">
+      {{ if $projectsParams }}
+        {{ range sort $projectsParams "weight" }}
+          <article class="project-card">
+            <div class="project-card__header">
+              <div>
+                <p class="eyebrow">Case study</p>
+                <h3>{{ .title }}</h3>
+                {{ with .subtitle }}<p class="muted">{{ . }}</p>{{ end }}
+              </div>
+              <div class="project-links">
+                {{ with .links.github }}<a class="btn btn--primary" href="{{ . }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+                {{ with .links.demo }}<a class="btn btn--ghost" href="{{ . }}" target="_blank" rel="noopener">Live</a>{{ end }}
+              </div>
             </div>
-            {{ with .links.github }}<a href="{{ . }}" target="_blank" rel="noopener" class="text-sm underline">GitHub</a>{{ end }}
-          </div>
-          {{ with .description }}<p class="mt-4">{{ . }}</p>{{ end }}
-          {{ with .tags }}
-          <div class="mt-4 flex flex-wrap gap-2">
-            {{ range . }}<span class="text-xs px-2 py-1 rounded bg-white/5 border border-white/10">{{ . }}</span>{{ end }}
-          </div>
-          {{ end }}
-        </article>
-      {{ end }}
-    {{ else }}
-      {{ range $projectsContent.ByWeight }}
-        <article class="card rounded-xl p-5">
-          <div class="flex items-start justify-between gap-4">
-            <div>
-              <h3 class="text-lg font-semibold">{{ .Title }}</h3>
-              {{ with .Params.subtitle }}<p class="muted text-sm mt-1">{{ . }}</p>{{ end }}
+            {{ with .description }}<p>{{ . }}</p>{{ end }}
+            {{ with .tags }}
+            <div class="tag-row">
+              {{ range . }}<span>{{ . }}</span>{{ end }}
             </div>
-            {{ with .Params.links.github }}<a href="{{ . }}" target="_blank" rel="noopener" class="text-sm underline">GitHub</a>{{ end }}
-          </div>
-          {{ if .Summary }}
-            <div class="mt-4">{{ .Summary }}</div>
-          {{ else if .Params.description }}
-            <p class="mt-4">{{ .Params.description }}</p>
-          {{ end }}
-          {{ with .Params.tags }}
-          <div class="mt-4 flex flex-wrap gap-2">
-            {{ range . }}<span class="text-xs px-2 py-1 rounded bg-white/5 border border-white/10">{{ . }}</span>{{ end }}
-          </div>
-          {{ end }}
-        </article>
+            {{ end }}
+          </article>
+        {{ end }}
+      {{ else }}
+        {{ range $projectsContent.ByWeight }}
+          <article class="project-card">
+            <div class="project-card__header">
+              <div>
+                <p class="eyebrow">Case study</p>
+                <h3>{{ .Title }}</h3>
+                {{ with .Params.subtitle }}<p class="muted">{{ . }}</p>{{ end }}
+              </div>
+              <div class="project-links">
+                {{ with .Params.links.github }}<a class="btn btn--primary" href="{{ . }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+                {{ with .Params.links.demo }}<a class="btn btn--ghost" href="{{ . }}" target="_blank" rel="noopener">Live</a>{{ end }}
+              </div>
+            </div>
+            {{ if .Summary }}
+              <div>{{ .Summary }}</div>
+            {{ else if .Params.description }}
+              <p>{{ .Params.description }}</p>
+            {{ end }}
+            {{ with .Params.tags }}
+            <div class="tag-row">
+              {{ range . }}<span>{{ . }}</span>{{ end }}
+            </div>
+            {{ end }}
+          </article>
+        {{ end }}
       {{ end }}
-    {{ end }}
+    </div>
   </div>
 </section>
 {{ end }}

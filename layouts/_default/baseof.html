@@ -3,14 +3,58 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Title }}</title>
+    {{ $pageTitle := cond (ne .Title "") (printf "%s — %s" .Title .Site.Title) .Site.Title }}
+    <title>{{ $pageTitle }}</title>
+    {{ $description := or .Description .Site.Params.description }}
+    {{ with $description }}<meta name="description" content="{{ . }}" />{{ end }}
+    <meta name="theme-color" content="#05060c" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:title" content="{{ $pageTitle }}" />
+    {{ with $description }}<meta property="og:description" content="{{ . }}" />{{ end }}
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="canonical" href="{{ .Permalink }}" />
     {{ with (templates.Defer (dict "key" "global")) }}
       {{ partial "css.html" . }}
     {{ end }}
   </head>
-  <body class="min-h-screen">
-    <main>
-      {{ block "main" . }}{{ end }}
-    </main>
+  <body class="page-body min-h-screen">
+    <div class="page-surface" aria-hidden="true">
+      <div class="glow glow--left"></div>
+      <div class="glow glow--right"></div>
+      <div class="noise"></div>
+    </div>
+    <div class="page-content">
+      <header class="site-header">
+        <div class="container mx-auto flex items-center justify-between gap-4 px-5 py-5">
+          <a class="brand" href="/">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <div>
+              <span class="brand-name">{{ .Site.Params.name }}</span>
+              {{ with .Site.Params.location }}<span class="brand-meta">{{ . }}</span>{{ end }}
+            </div>
+          </a>
+          <nav class="primary-nav" aria-label="Primary">
+            {{ $nav := slice
+              (dict "label" "Overview" "href" "#overview")
+              (dict "label" "Experience" "href" "#experience")
+              (dict "label" "Skills" "href" "#skills")
+              (dict "label" "Certifications" "href" "#certifications")
+              (dict "label" "Projects" "href" "#projects")
+              (dict "label" "Contact" "href" "#contact")
+            }}
+            {{ range $nav }}
+              <a href="{{ .href }}">{{ .label }}</a>
+            {{ end }}
+          </nav>
+        </div>
+      </header>
+      <main id="overview" class="relative">
+        {{ block "main" . }}{{ end }}
+      </main>
+    </div>
   </body>
 </html>

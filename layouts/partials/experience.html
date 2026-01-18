@@ -1,0 +1,35 @@
+{{ $roles := .Site.Params.experience }}
+{{ if $roles }}
+<section id="experience" class="section">
+  <div class="container mx-auto px-5">
+    <div class="section-heading">
+      <p class="eyebrow">Timeline</p>
+      <h2>Experience</h2>
+      <p class="muted">Platforms and teams I've supported across F&P and Finatix.</p>
+    </div>
+    <div class="experience-timeline" role="list">
+      {{ range $roles }}
+      <article class="project-card experience-card timeline-card{{ if .current }} timeline-card--current{{ end }}" role="listitem"{{ if .current }} aria-current="true"{{ end }}>
+        <div class="experience-card__header">
+          <div>
+            <p class="eyebrow">{{ .company }}</p>
+            <h3>{{ .role }}</h3>
+          </div>
+          <div class="experience-card__meta">
+            {{ with .period }}<span class="experience-card__period">{{.}}</span>{{ end }}
+            {{ with .location }}<span class="experience-card__location">{{.}}</span>{{ end }}
+            {{ if .current }}<span class="experience-chip">Current</span>{{ end }}
+          </div>
+        </div>
+        {{ with .summary }}<p class="muted">{{.}}</p>{{ end }}
+        {{ with .highlights }}
+        <ul class="experience-card__highlights" role="list">
+          {{ range . }}<li>{{.}}</li>{{ end }}
+        </ul>
+        {{ end }}
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

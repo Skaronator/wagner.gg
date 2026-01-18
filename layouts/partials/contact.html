@@ -1,0 +1,14 @@
+<section id="contact" class="section">
+  <div class="container mx-auto px-5">
+    <div class="section-heading">
+      <p class="eyebrow">Contact</p>
+      <h2>Available for a chat</h2>
+      <p class="muted">Prefer a quick message over forms. Use any of the links below.</p>
+    </div>
+    <div class="contact-actions contact-actions--inline">
+      {{ with .Site.Params.social.linkedin }}<a class="btn btn--primary" href="{{ . }}" target="_blank" rel="noopener">LinkedIn</a>{{ end }}
+      {{ with .Site.Params.social.email }}<a class="btn btn--ghost" href="{{ . }}">Email</a>{{ end }}
+      {{ with .Site.Params.social.github }}<a class="btn btn--ghost" href="{{ . }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+    </div>
+  </div>
+</section>

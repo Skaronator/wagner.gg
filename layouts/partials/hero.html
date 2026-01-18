@@ -1,0 +1,28 @@
+<section class="hero-section" aria-labelledby="hero-title">
+  <div class="container mx-auto px-5 py-14">
+    <div class="hero-panel hero-panel--solo">
+      <div class="hero-copy">
+        <div class="hero-intro">
+          <h1 id="hero-title" class="hero-title">
+            {{ with .Site.Params.hero_intro }}{{ . }}{{ end }}
+          </h1>
+          {{ with .Site.Params.hero_subtitle }}
+          <p class="hero-subtitle">{{ . }}</p>
+          {{ end }}
+        </div>
+        <div class="hero-body">
+          {{ with .Site.Params.hero_body }}{{ . | markdownify }}{{ end }}
+        </div>
+        {{ with .Site.Params.hero_highlights }}
+        <ul class="hero-highlights" role="list">
+          {{ range . }}<li>{{ . }}</li>{{ end }}
+        </ul>
+        {{ end }}
+        <div class="hero-ctas">
+          <a class="btn btn--ghost" href="#projects">Explore projects</a>
+          <a class="btn btn--primary" href="#experience">View experience</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
