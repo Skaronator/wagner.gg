@@ -29,7 +29,7 @@
     </div>
     <div class="page-content">
       <header class="site-header">
-        <div class="container mx-auto flex items-center justify-between gap-4 px-5 py-5">
+        <div class="container relative mx-auto flex items-center justify-between gap-4 px-5 py-5">
           <a class="brand" href="/">
             <span class="brand-mark" aria-hidden="true"></span>
             <div>
@@ -37,7 +37,31 @@
               {{ with .Site.Params.location }}<span class="brand-meta">{{ . }}</span>{{ end }}
             </div>
           </a>
-          <nav class="primary-nav" aria-label="Primary">
+          <input
+            id="nav-toggle"
+            type="checkbox"
+            class="nav-toggle-input sr-only"
+            aria-label="Toggle navigation"
+            aria-controls="primary-nav"
+          />
+          <label
+            class="nav-toggle inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white transition hover:border-white/25 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 lg:hidden"
+            for="nav-toggle"
+            role="button"
+            aria-hidden="true"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <line x1="4" x2="20" y1="7" y2="7" />
+              <line x1="4" x2="20" y1="12" y2="12" />
+              <line x1="4" x2="20" y1="17" y2="17" />
+            </svg>
+          </label>
+          <nav
+            id="primary-nav"
+            class="primary-nav mobile-nav text-base text-[var(--text-muted)] lg:text-sm"
+            aria-label="Primary"
+          >
             {{ $nav := slice
               (dict "label" "Overview" "href" "#overview")
               (dict "label" "Experience" "href" "#experience")
@@ -50,6 +74,7 @@
               <a href="{{ .href }}">{{ .label }}</a>
             {{ end }}
           </nav>
+          <label for="nav-toggle" class="nav-scrim" aria-hidden="true"></label>
         </div>
       </header>
       <main id="overview" class="relative">
