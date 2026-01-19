@@ -23,7 +23,8 @@
       {{ partial "css.html" . }}
     {{ end }}
   </head>
-  <body class="page-body min-h-screen">
+  <body id="page-top" class="page-body min-h-screen">
+    <span id="nav-close" class="nav-close-anchor" aria-hidden="true"></span>
     <div class="page-surface" aria-hidden="true">
       <div class="glow glow--left"></div>
       <div class="glow glow--right"></div>
@@ -39,23 +40,16 @@
               {{ with .Site.Params.location }}<span class="brand-meta">{{ . }}</span>{{ end }}
             </div>
           </a>
-          <input
-            id="nav-toggle"
-            type="checkbox"
-            class="nav-toggle-input sr-only"
-            aria-label="Toggle navigation"
-            aria-controls="primary-nav"
-          />
-          <label class="nav-toggle lg:hidden" for="nav-toggle" role="button" aria-hidden="true">
+          <a class="nav-toggle lg:hidden" href="#nav-open" role="button" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
             <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
               <line x1="4" x2="20" y1="7" y2="7" />
               <line x1="4" x2="20" y1="12" y2="12" />
               <line x1="4" x2="20" y1="17" y2="17" />
             </svg>
-          </label>
+          </a>
+          <span id="nav-open" class="nav-open-anchor" aria-hidden="true"></span>
           <nav
-            id="primary-nav"
             class="primary-nav mobile-nav text-base text-[var(--text-muted)] lg:text-sm"
             aria-label="Primary"
           >
@@ -71,7 +65,7 @@
               <a href="{{ .href }}">{{ .label }}</a>
             {{ end }}
           </nav>
-          <label for="nav-toggle" class="nav-scrim" aria-hidden="true"></label>
+          <a href="#nav-close" class="nav-scrim" aria-label="Close navigation"></a>
         </div>
       </header>
       <main id="overview" class="relative">

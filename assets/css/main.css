@@ -172,16 +172,9 @@ html {
   height: 26px;
 }
 
-.nav-toggle-input:focus-visible + .nav-toggle {
+.nav-toggle:focus-visible {
   outline: 2px solid rgba(255, 255, 255, 0.8);
   outline-offset: 5px;
-}
-
-.nav-toggle-input:checked + .nav-toggle,
-.nav-toggle-input:checked + .nav-toggle:hover {
-  background: rgba(18, 20, 36, 0.94);
-  border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
 }
 
 .nav-scrim {
@@ -194,11 +187,10 @@ html {
   z-index: 4;
 }
 
-.nav-toggle-input:checked ~ .nav-scrim {
+#nav-open:target + .mobile-nav + .nav-scrim {
   opacity: 1;
   pointer-events: auto;
 }
-
 
 .sr-only {
   position: absolute;
@@ -210,6 +202,27 @@ html {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+.nav-close-anchor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nav-open-anchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 .mobile-nav {
@@ -236,7 +249,7 @@ html {
   transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.35s ease, padding 0.35s ease, margin-top 0.35s ease;
 }
 
-.nav-toggle-input:checked ~ .mobile-nav {
+#nav-open:target + .mobile-nav {
   opacity: 1;
   transform: translateY(0);
   max-height: 480px;
@@ -770,6 +783,12 @@ html {
     pointer-events: auto;
     overflow: visible;
     transition: none;
+  }
+
+  #nav-open:target + .mobile-nav {
+    padding: 0;
+    margin-top: 0;
+    max-height: none;
   }
 
   .nav-toggle {
