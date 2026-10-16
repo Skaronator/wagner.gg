@@ -1,0 +1,193 @@
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/space-grotesk-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/space-grotesk-600.woff2") format("woff2");
+}
+
+:root {
+  color-scheme: light dark;
+  --paper: #f6f4ed;
+  --ink: #25251f;
+  --muted: #65645b;
+  --accent: #c44316;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1c1c19;
+    --ink: #f6f4ed;
+    --muted: #b5b3a9;
+    --accent: #ff9166;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100svh;
+  margin: 0;
+  padding: clamp(2rem, 8vw, 6rem) 1.5rem;
+  display: grid;
+  place-items: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  color: var(--paper);
+  background: var(--accent);
+}
+
+.calling-card {
+  width: 100%;
+  max-width: 42rem;
+}
+
+.greeting {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 2.5rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.greeting-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--accent);
+  transition: transform 180ms ease;
+}
+
+.greeting-copy {
+  display: grid;
+}
+
+.greeting-copy > span {
+  grid-area: 1 / 1;
+  transition: opacity 180ms ease;
+}
+
+.greeting-local {
+  opacity: 0;
+  color: var(--accent);
+}
+
+.greeting:hover .greeting-default {
+  opacity: 0;
+}
+
+.greeting:hover .greeting-local {
+  opacity: 1;
+}
+
+.greeting:hover .greeting-dot {
+  transform: scale(1.4);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.75rem, 8vw, 5rem);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 1.06;
+  text-wrap: balance;
+}
+
+.name-dot {
+  color: var(--accent);
+}
+
+.intro {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.tools {
+  margin-top: 3rem;
+}
+
+.tools h2 {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.tools ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.tools li {
+  white-space: nowrap;
+}
+
+.tools li:not(:last-child)::after {
+  content: "/";
+  margin: 0 0.75rem;
+  color: var(--muted);
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  margin-top: 2.5rem;
+  color: var(--ink);
+  font-size: 0.9rem;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+  transition: color 180ms ease;
+}
+
+.github-link span {
+  transition: transform 180ms ease;
+}
+
+.github-link:hover,
+.github-link:focus-visible {
+  color: var(--accent);
+}
+
+.github-link:hover span {
+  transform: translate(2px, -2px);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
